@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Introduction to List Processing</title>
+    <script type="text/javascript" language="javascript">
+        p1 = 0;
+        t1 = 0;
+        t2 = 0;
+        function calc() {
+            var price = 0;
+            var tax = 0
+            var total = 0;
+            var i = taxform.price.selectedIndex;
+            var j = taxform.state.selectedIndex;
+            price = parseFloat(taxform.price.options[i].value);
+            tax = price * taxform.state.options[j].value;
+            p1 += price;
+            t1 += tax;
+            total = price + tax;
+            t2 = p1 + t1; 
+            taxform.display.value += "Price: $" + price + "\nTax: $" + tax + "\nTotal: $" + total + "\n";
+
+        }
+        function bill() {
+            taxform.displaybill.value = "Total Price: $" + p1 + "\nTotal Tax: $" + t1 + "\nGrand Total: $" + t2 + "\n";
+        }
+        function clearvalue() {
+            p1 = 0;
+            t1 = 0;
+            t2 = 0;
+            taxform.price.value = "Select Car Price";
+            taxform.state.value = "State Tax Rate";
+            taxform.display.value = "";
+            taxform.displaybill.value = "";
+
+            /*for (var i = 0; i < taxform.elements.length; i++) {
+                taxform.elements[i].value = "";
+            }*/
+            
+        }
+    </script>
+</head>
+<body>
+<form name="taxform" action="">
+<select name="price">
+<option>Select Car Price</option>
+<option value="10000">10000</option>
+<option value="20000">20000</option>
+<option value="30000">30000</option>
+</select> 
+<select name="state">
+<option>State Tax Rate</option>
+<option value=".25">Paris 25%</option>
+<option value=".50">New York 50%</option>
+<option value=".75">Mumbai 75%</option>
+</select><br /><br />
+<input type="button" value="Bill Detail" onclick="calc()"/><br/><br />
+<input type="button" value="Generate Bill" onclick="bill()" /><br /><br />
+<textarea name="display" rows="5" cols="25"></textarea><br /><br />
+<textarea name="displaybill" rows="5" cols="25"></textarea><br /><br />
+<input type="button" value="Clear Value" onclick="clearvalue()" /><br /><br />
+<!--<input type="reset" value="Clear Form" /><br /><br />-->
+</form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Introduction to Exception Handling</title>
+    <script type="text/javascript" language="javascript">
+        function testThrow() {
+            var x = prompt("Enter a number between 10 and 100");
+            try {
+
+
+                if (x < 10) {
+                    throw "e1";
+                }
+                else if (x > 100) {
+                    throw "e2";
+                }
+                else if (isNaN(x)) {
+                    throw "e3";
+                }
+                else {
+                    confirm("WELCOME");
+                }
+            }
+            catch (e) {
+                if (e == "e1") {
+                    alert("Value is less than 10");
+                }
+                else if (e == "e2") {
+                    alert("Value is greater than 100");
+                }
+                else {
+                    alert("Not a Number");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="Click Me" onclick="testThrow()" />
+</body>
+</html>

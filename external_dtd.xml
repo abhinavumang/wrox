@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE book SYSTEM "book.dtd" >
+<book>
+  <authors>
+    <author id="12">Hari Prasad</author>
+    <author id="18">Hari Ram</author>
+  </authors>
+  <title>Database systems</title>
+  <price>100</price>
+  <keywords>
+    <keyword>sql</keyword>
+    <keyword>relational</keyword>
+  </keywords>
+</book>

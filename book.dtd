@@ -1,0 +1,9 @@
+﻿<!ELEMENT book (authors,title,price,keywords)>
+<!ELEMENT authors (author,author)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT keywords (keyword,keyword)>
+<!ELEMENT keyword (#PCDATA)>
+<!ELEMENT keyword (#PCDATA)>

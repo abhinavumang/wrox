@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Processing Text</title>
+    <script type="text/javascript">
+        function getfocus() {
+            document.calc.num1.focus();
+        }
+        function add() {
+            var n1 = parseFloat(document.calc.num1.value);
+            var n2 = parseFloat(document.calc.num2.value);
+            document.calc.result.value = n1 + n2;
+        }
+        function subtract() {
+            var n1 =document.calc.num1.value;
+            var n2 =document.calc.num2.value;
+            document.calc.result.value = n1 - n2;
+        }
+        function multiply() {
+            var n1 = document.calc.num1.value;
+            var n2 = document.calc.num2.value;
+            document.calc.result.value = n1 * n2;
+        }
+        function divide() {
+            var n1 = document.calc.num1.value;
+            var n2 = document.calc.num2.value;
+            if (n2 == 0) {
+                alert("You can't divide by 0.");
+            }
+            else {
+                document.calc.result.value = n1 / n2;
+            }
+        }
+    </script>
+</head>
+<body onload="getfocus()">
+<form name="calc" action="">
+<div style="width:225px">
+<div style="float:left;width:120px"><label style="width:120px">Enter 1st Number::</label></div>
+<div style="float:left;width:90px"><input type="text" style="width:90px" name="num1"/></div>
+<br />
+<br />
+<div style="float:left;width:120px"><label style="width:120px">Enter 2nd Number::</label></div>
+<div style="float:left;width:90px"><input type="text" style="width:90px" name="num2"/></div>
+<br />
+<br />
+<div style="float:left;margin-left:0px"><input type="button" value="+" onclick="add()" style="width:40px"/></div>
+<div style="float:left;margin-left:3px"><input type="button" value="-" onclick="subtract()" style="width:40px"/></div>
+<div style="float:left;margin-left:3px"><input type="button" value="*" onclick="multiply()" style="width:40px"/></div>
+<div style="float:left;margin-left:3px"><input type="button" value="/" onclick="divide()" style="width:40px"/></div>
+<div style="float:left;margin-left:1px"><input type="reset" value="clear" onclick="getfocus()" style="width:42px"/></div>
+<br />
+<br />
+<div style="float:left;width:120px">Result<label style="width:120px">::</label></div>
+<div style="float:left;width:90px"><input type="text" style="width:90px" name="result"/></div>
+</div>
+</form>
+</body>
+</html>

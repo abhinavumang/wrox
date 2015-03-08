@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Validator</title>
+<script type="text/javascript">
+    function checkForm(form) {
+        var flag = false;
+        //flag=form.elements[i].checked;
+  for (var i = 0; i < form.elements.length; i++) {
+      if (form.elements[i].type == "text" && form.elements[i].value == "") {
+          alert("Fill out ALL text fields.");
+          return false;
+      }
+      if (form.elements[i].type == "radio" && form.elements[i].value==false) {
+          alert("Choose the Gender");
+          //flag = true;
+          //return true;
+          return false;
+      }
+      /*else if (!flag) {
+          alert("Choose the Gender");
+          return false;
+      } */
+         
+          
+      }
+return true;
+ }
+
+
+
+</script>
+</head>
+<body>
+<form action="About.aspx"  onsubmit="return checkForm(this)">
+Please enter all requested information:<br>
+First Name:<input type="text" name=”firstName”><br>
+Last Name:<input type="text" name=”lastName”><br>
+Rank:<input type="text" name=”rank”><br>
+Serial Number:<input type="text" name=”serialNumber”><br>
+Gender<br />
+<input type="radio" name="g1" value="Male"/>Male<br />
+<input type="radio" name="g1"  value="Female"/>Female<br />
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript"> 
+    <!--
+        var retVal = prompt("Enter your name : ", "your name here");
+        alert("You have entered : " + retVal);
+        //window.location = "http://www.newlocation.com";
+        //--> 
+        function Redirect() {
+            window.location = "http://www.newlocation.com";
+        }
+        document.write("You will be redirected to main page in 10 sec.");
+        //setTimeout('Redirect()', 10000);
+        function myFunc() {
+            var a = 0;
+            try {
+                //alert("Value of variable a is : " + a);
+                var x = a / 0;
+                alert("Value of variable x is : " + x);
+            }
+            catch (e) {
+                alert("Error: " + e.description);
+            }
+            finally {
+                alert("Finally block will always execute!"); 
+            }
+        }
+        function myFunc1() {
+            var a = 100;
+            var b = 0;
+            try {
+                if (b == 0) {
+                    throw ("Divide by zero error.");
+                }
+                else {
+                    var c = a / b;
+                }
+            }
+            catch (e) {
+                alert("Error: " + e);
+            }
+        }
+        function validate() {
+        
+        if (document.f.g1.checked.value==false) {
+            alert("Please select a gender");
+            return false;
+        }
+        else
+            return true;
+
+        }
+        function ob() {
+            if (document.f.t.value == "")
+                alert("Enter your Name");
+        }
+        
+     </script>
+</head>
+<body>
+
+<form action="About.aspx" name="f" onsubmit="validate()">
+<input type="button" value="hello" onclick="myFunc()"/>
+<input type="button" value="click" onclick="myFunc1()"/><br />
+Gender<br />
+<input type="radio" name="g1" value="Male"/>Male<br />
+<input type="radio" name="g1"  value="Female"/>Female<br />
+<input type="submit" value="Submit" /><br />
+Name:<input type="text" name="t" onblur="ob()" />
+
+</form>
+</body>
+</html>

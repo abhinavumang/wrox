@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Throwing a String Exception</title>
+<script type="text/javascript" language="javascript">
+var letters = new Array("A","B","C","D","E");
+function getLetter(fld) {
+try {
+    //var inp = parseInt(fld.value, 10);
+    var inp = parseInt(fld.value);
+if (isNaN(inp)) {
+throw "Entry was not a number.";
+}
+if (inp < 1 || inp > 5) {
+throw "Enter only 1 through 5.";
+}
+fld.form.output.value = letters[inp - 1];
+}
+catch (e) {
+alert(e);
+fld.form.output.value = "";
+fld.focus();
+fld.select();
+}
+}
+</script>
+</head>
+<body>
+<h1>Throwing a String Exception</h1>
+<hr />
+<form name="" action="">
+Enter a number from 1 to 5: <input type="text" name="input" size="5" /> <br /><br />
+<input type="button" value="Get Letter" onclick="getLetter(this.form.input)" /><br /><br />
+ Matching Letter is:<input type="text" name="output" size="5" /><br />
+</form>
+</body>
+</html>

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Intoduction to VB Script</title>
+    <script type="text/javascript">
+        function message() {
+            alert("This alert box was called with the onload event");
+        }
+        function myfunction() {
+            alert("Welcome to my world!");
+        }
+        function square(number1) {
+            var c = number1 * number1;
+            // Now we will return the result
+            return c;
+        }
+
+        var x = 8;
+        // Here we invoke the function and capture the result
+        var des = square(x);
+        var res = des / 2;
+        document.write("Result = " + res);
+
+  </script>
+</head>
+<body onload=message()>
+<form name="myform" action="">
+<input type="button" value="hit me" onclick="myfunction()" />
+var x=8;
+var des;
+var res;
+<input type="button" value="result" onclick="des=square(x)" />
+res=des/2;
+document.write("Result = " + res);
+</form>
+    <script language="javascript" type="text/javascript">
+        document.write("Hello World" + "<br/>");
+        document.write("This message is written by JavaScript"+"<br/>");
+        x = 5 + 5;
+        document.write(x + "<br/>");
+
+        x = "5" + "5";
+        document.write(x + "<br/>");
+
+        x = 5 + "5";
+        document.write(x + "<br/>");
+
+        x = "5" + 5;
+        document.write(x + "<br/>");
+        var d = new Date();
+        var time = d.getHours();
+        document.write("Time is::" + time+"<br/>");
+        if (time < 10) {
+            document.write("<b>Good Morning</b>");
+        }
+        else if (time >= 10 && time <= 16) {
+            document.write("<b>Good Day</b>");
+        }
+        else {
+            document.write("<b>Hello World!</b><br/>");
+        }
+
+        
+        var theDay = d.getDay();
+        switch (theDay) {
+            case 5:
+                document.write("Finally Friday");
+                break;
+            case 6:
+                document.write("Super Saturday");
+                break;
+            case 0:
+                document.write("Sleepy Sunday");
+                break;
+            default:
+                document.write("I'm looking forward to this weekend!");
+        }
+  </script>
+  <table border=3>
+<tr><td>CELSIUS</td><td>FAHRENHEIT</td></tr>
+<script language="javascript" type="text/javascript">
+    var celsius;
+    for (celsius = 0; celsius <= 50; celsius = celsius + 1) {
+        document.write("<tr><td>" + celsius + "</td><td>"+ ((celsius * 9 / 5) + 32) + "</td></tr>");
+    }
+</script>
+</table>
+
+<table border=3>
+<tr><td>CELSIUS</td><td>FAHRENHEIT</td></tr>
+<script language="javascript" type="text/javascript">
+    var celsius = 0;
+    while (celsius <= 50) {
+        document.write("<tr><td>" + celsius +"</td><td>" + ((celsius * 9 / 5) + 32) + "</td></tr>");
+        celsius = celsius + 1;
+    }
+    var i = 0;
+    do {
+        document.write(i + "<br/>")
+        i++;
+    } while (i <= 5)
+
+    var i = 0;
+    do {
+        document.write(i + "<br/>")
+        if (i > 2) { break; }
+        i++;
+    } while (i <= 5)
+
+</script> 
+</table>
+</body>
+</html>

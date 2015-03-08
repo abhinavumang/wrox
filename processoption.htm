@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Processing Options</title>
+    <script type="text/javascript" language="javascript">
+          function total() {
+            var subtotal = 0;
+            var total = 0;
+            var adjustment = 1;
+            var payment = false;
+            var elarray = document.payform.elements;
+            //document.write(elarray.length);
+            for (var i = 0; i <= 3; i++) {
+                if (elarray[i].checked) {
+                    subtotal += parseFloat(elarray[i].value);
+                }
+            }
+            for (var i = 4; i <= 8; i++) {
+                if (elarray[i].checked) {
+                    adjustment = elarray[i].value;
+                    payment = true;
+                }
+            }
+            if (payment) {
+                total = subtotal * adjustment;
+                document.payform.display.value = "Subtotal:" + subtotal
+                                                 + "\radjustment:" + adjustment
+                                                 + "\rtotal:" + total;
+
+            }
+        }
+    </script>
+</head>
+<body>
+<form name="payform" action="">
+<b>Please buy some stuff</b><br /><br />
+<input type="checkbox" name="item" value="14.99" />Mobile $14.99<br />
+<input type="checkbox" name="item" value="12.99" />Laptop $12.99<br />
+<input type="checkbox" name="item" value="13.99" />Desktop $13.99<br />
+<input type="checkbox" name="item" value="14.99" />Mouse $14.99<br /><br />
+<b>Choose Payment Method</b><br /><br />
+<input type="radio" name="pay" value="1.2" />Money Order(20% service charge)<br />
+<input type="radio" name="pay" value="1.1" />Personal Charge(10% service charge)<br />
+<input type="radio" name="pay" value=".8" />Visa(Preffered--20% discount)<br />
+<input type="radio" name="pay" value=".9" />Master card(10% discount)<br />
+<input type="radio" name="pay" value=".9" />Discover(10% discount)<br /><br />
+<input type="button" value="Process Order" onclick="total()" />
+<input type="reset" value="Reset Form" />
+<textarea name="display" rows="5" cols="35"></textarea>
+</form>
+</body>
+</html>

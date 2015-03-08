@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--<head>
+    <title>Introduction to Exception Handling</title>
+    <script type="text/javascript" language="javascript">
+        function a1() {
+            try {
+                Alert("Welcome");
+            }
+            catch (e) {
+                document.write("error message::" + e.Description + "<br/>");
+                document.write("error number::" + e.Number + "<br/>");
+                document.write("error name::" + e.Name + "<br/>");
+            }
+        }
+    </script>
+</head>
+<body onload="a1()">
+<script type="text/javascript" language="javascript">
+
+</script>
+</body>-->
+<head>
+<title>Introduction to Exception Handling</title>
+<script type="text/javascript" language="javascript">
+    var txt = "";
+    function message() {
+        try {
+            adddlert("Welcome guest!");
+        }
+        catch (err) {
+            txt = "There was an error on this page.\n\n";
+            txt += "Error description: " + err.message + "\n\n";
+            txt += "Click OK to continue.\n\n";
+            alert(txt);
+        }
+    }
+</script>
+<script type="text/javascript" language="javascript">
+    var txt = "";
+    function msg() {
+        try {
+            adddlert("Welcome guest!");
+        }
+        catch (err) {
+            txt = "There was an error on this page.\n\n";
+            txt += "Click OK to continue viewing this page,\n";
+            txt += "or Cancel to return to the home page.\n\n";
+            if (!confirm(txt)) {
+                document.location.href = "http://www.w3schools.com/";
+            }
+        }
+    }
+
+    var ajaxrequest = null
+    if (window.ActiveXObject) { //Test for support for different versions of ActiveXObject in IE
+        try {
+            ajaxrequest = new ActiveXObject("Msxml2.XMLHTTP")
+        }
+        catch (e) {
+            try {
+                ajaxrequest = new ActiveXObject("Microsoft.XMLHTTP")
+            } //end inner try
+            catch (e) {
+                alert("I give up. Your IE doesn't support Ajax!")
+            } //end inner catch
+        } //end outer catch
+    }
+    else if (window.XMLHttpRequest) // if Mozilla, Safari etc
+        ajaxrequest = new XMLHttpRequest()
+
+    ajaxrequest.open('GET', 'process.php', true) //do something with request
+</script>
+<script type="text/javascript"> 
+<!-- window.onerror = function (msg, url, line) 
+{ 
+alert("Message : " + msg ); 
+alert("url : " + url ); 
+alert("Line number : " + line ); 
+} //-->
+</script>
+</head>
+<body>
+<input type="button" value="View message" onclick="message()" />
+<input type="button" value="Click Me" onclick="msg()" /><br /><br />
+<p>Click the following to see the result:</p><input type="button" value="Click Me" onclick="myFunc()" />
+</body>
+</html>

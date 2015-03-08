@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        /*function myFunc() {
+            alert("WELCOME");
+        }*/
+        window.onerror = function (msg, url, line) {
+            alert("Message : " + msg);
+            alert("url : " + url);
+            alert("Line number : " + line);
+            function newwindow() {
+                window.open('navigator.htm', 'my window', 'width=400', 'height=200', 'toolbar=yes', 'status=yes');
+            }
+            
+        } 
+</script>
+<script type="text/javascript">
+    function newwindow() {
+        window.open("navigator.htm", 'my window', 'width=400', 'height=200', 'toolbar=yes', 'status=yes');
+    }
+</script>
+</head>
+<body>
+<p>Click the following to see the result:</p><input type="button" value="Click Me" onclick="myFunc()" />
+<img src="myimage.gif" alt="" onerror="alert('An error occurred loading the image.')" />
+<input type="button"  value="New Window!" onclick="window.open('navigator.htm','my window','width=400','height=200','toolbar=yes','status=yes')"/>
+<input type="button"  value="Window!" onclick="newwindow()"/>
+</body>
+</html>

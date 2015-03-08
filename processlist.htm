@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Welcome to Four Wheelers Category</title>
+    <script type="text/javascript" language="javascript">
+        function calc() {
+            var tax = 0;
+            var total = 0;
+            var i = document.taxform.price.selectedIndex;
+            var j = document.taxform.state.selectedIndex;
+            var price = parseFloat(document.taxform.price.options[i].value);
+            var taxrate = document.taxform.state.options[j].value;
+            tax = price * taxrate;
+            total = price + tax;
+            document.taxform.display.value = "Price: $" + price + "\rTax: $" + tax + "\rTotal: $" + total;
+        }
+        function load() {
+            var elarray = document.taxform.elements;
+            //document.write(elarray.length);overwrite all the form elements.
+            confirm("There are "+elarray.length+" elements in the form.");
+            return true;
+
+        }
+        var tax = 0;
+        var total = 0;
+            function bill() {
+                //var tax = 0;
+                //var total = 0;
+                //var elarray = document.taxform.elements;
+                 
+                    var i = document.taxform.price.selectedIndex;
+                    var j = document.taxform.state.selectedIndex;
+                    var price = parseFloat(document.taxform.price.options[i].value);
+                    var taxrate = document.taxform.state.options[j].value;
+                    tax += price * taxrate;
+                    total += price + tax;
+                
+
+                document.taxform.display.value = "Price: $" + price + "\rTax: $" + tax + "\rTotal: $" + total;
+            }
+    </script>
+</head>
+<body onload="load()">
+<form name="taxform" action="">
+<select name="price">
+<option>Select Car Price</option>
+<option value="15000">15000</option>
+<option value="20000">20000</option>
+<option value="25000">25000</option>
+<option value="30000">30000</option>
+<option value="40000">40000</option>
+</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select name="state">
+<option>Select Tax Rate</option>
+<option value=".029">Colorado 2.9%</option>
+<option value=".0625">Illinois 6.25%</option>
+<option value=".04">New York 4%</option>
+<option value=".07">Rhode Island 7%</option>
+</select><br /><br />
+
+<input type="reset" value="Clear Form"/><br /><br />
+<input type="button" value="Generate Bill" onclick="bill()" /><br /><br />
+<textarea name="display" cols="35" rows="5"></textarea>
+</form>
+</body>
+</html>
